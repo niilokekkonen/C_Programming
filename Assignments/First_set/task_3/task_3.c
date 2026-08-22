@@ -17,6 +17,7 @@ int main(void)
     {
         grades[i] = -1;
     }
+    
     while (saving) 
     {
         printf("Enter student number (1 - %d) or 0 to stop:\n", class_size);
@@ -33,6 +34,7 @@ int main(void)
         {
             grading = true;
         }
+        // Inner loop to continue asking for the grade if the value was out of bounds.
         while (grading) 
         {
             printf("Enter grade (0 - 5) for student %d or -1 to cancel:\n", student_nmbr);
