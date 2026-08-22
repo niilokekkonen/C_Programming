@@ -1,0 +1,57 @@
+998
+998
+998
+998
+998
+998
+1489.51
+998
+998
+998
+998
+998
+
+
+Enter tax rate:         
+18
+Enter income limit:
+10000
+Enter tax rate above limit:
+36
+Enter your income for month 1
+998
+Enter your income for month 2
+998
+Enter your income for month 3
+998
+Enter your income for month 4
+998
+Enter your income for month 5
+998
+Enter your income for month 6
+998
+Enter your income for month 7
+1489.51
+Enter your income for month 8
+998
+Enter your income for month 9
+998
+Enter your income for month 10
+998
+Enter your income for month 11
+998
+Enter your income for month 12
+998
+month     income          taxes
+    1     998.00          179.64
+    2     998.00          179.64
+    3     998.00          179.64
+    4     998.00          179.64
+    5     998.00          179.64
+    6     998.00          179.64
+    7    1489.51          268.11
+    8     998.00          179.64
+    9     998.00          179.64
+   10     998.00          359.28
+   11     998.00          359.28
+   12     998.00          359.28

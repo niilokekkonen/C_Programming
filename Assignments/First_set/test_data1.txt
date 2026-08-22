@@ -1,0 +1,58 @@
+Test Data for task 1
+Enter the price of a bus ticket:
+5
+Enter the price of a taxi trip:
+25
+How much cash you got:
+45
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+1
+Bus ticket bought
+Your balance: 40.0000
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+2
+Taxi trip reserved
+Your balance: 15.0000
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+2
+Not enough money for taxi :D
+You Thought You Was Rich, Huh?
+Your balance: 15.0000
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+1
+Bus ticket bought
+Your balance: 10.0000
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+1
+Bus ticket bought
+Your balance: 5.0000
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+1
+Bus ticket bought
+Your balance: 0.0000
+Do you want to ride with
+1. Bus
+2. Taxi
+Enter your choice:
+1
+You must walk now ;D
+Not enough money for Bus
+Your balance: 0.0000
