@@ -38,7 +38,14 @@ int main(void)
         while (grading) 
         {
             printf("Enter grade (0 - 5) for student %d or -1 to cancel:\n", student_nmbr);
-            scanf("%d", &grade);
+            if (scanf("%d", &grade) != 1) 
+            {   // Emptying the character buffer until \n character is found
+                while (getchar() != '\n') 
+                {
+                    printf("Invalid input\n");
+                    grading = true;
+                }
+            }
             if (grade == -1) 
         {
             grades[student_nmbr - 1] = -1;
