@@ -2,14 +2,14 @@
 #include <stdbool.h>
 
 int read_int(void);
-int calc_avg(int sum, int count);
+float calc_avg(int sum, int count);
 
 int main(void) 
 {
     bool entering = true;
     int sum = 0;
     int count = 0;
-    int average = 0;
+    float average = 0;
     while (entering) 
     {
     printf("Enter an integer\nor\na negative number to stop\n");
@@ -18,22 +18,25 @@ int main(void)
     if (returned < 0) 
     {
         average = calc_avg(sum, count);
-        printf("%d", average);
+        printf("%.3f", average);
         entering = false;
     }
     else 
     {
         sum += returned;
         count += 1;
-        printf("SUM: %d, COUNT: %d\n", sum, count);
-    }
+        /*
+        LEFT FOR TESTING PURPOSES 
+        => printf("SUM: %d, COUNT: %d\n", sum, count);
+        */
+    }   
     }
   return 0;   
 }
 
-int calc_avg(int sum, int count) 
+float calc_avg(int sum, int count) 
 {
-    int avg = sum / count;
+    float avg = (float) sum / count;
     return avg;
 }
 
