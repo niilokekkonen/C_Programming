@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "task_5.h"
 #include <windows.h>
+
+#include "task_5.h"
 // 'ERROR' code for a user entering characters
 #define CHAR_CODE 777
 // 'ERROR' code for user going out of range(OUR)
@@ -44,7 +45,7 @@ int main (void)
     }
     return 0;
 }
-// Function that reads a number, and checks if its in range
+// Function that reads a number, and checks if its in range of int low, int high
 int read_range(int low, int high)
 {
     printf("Enter a number between (%d - %d)\n", low, high);
@@ -64,7 +65,7 @@ int read_range(int low, int high)
         return number;
     }
 }
-
+// Validates integer, inputs CHAR_CODE=777 if a character is encountered
 int valid_int(void) 
 {
     int number = 0;
