@@ -11,8 +11,11 @@ int main(void)
     float higher_tax = 0;
     float income_limit = 0;
     float income_sum = 0;
+    float previous_sum = 0;
     float low_part = 0;
     float high_part = 0;
+    float over_limit = 0;
+    float under_limit = 0;
     
     printf("Enter tax rate:\n");
     scanf("%f", &tax_rate);
@@ -30,19 +33,24 @@ int main(void)
     // For loop to calculate taxes
     for (int i = 0; i < MONTHS; i++) 
     {
+        previous_sum = income_sum;
         income_sum += income_array[i];
         if (income_sum <= income_limit) 
         {
             tax_array[i] = (tax_rate/100 * income_array[i]);
         }
-        else if (income_sum > income_limit) 
+        else if (previous_sum >= income_limit) 
         {
             tax_array[i] = (higher_tax/100 * income_array[i]);
         }
         else 
         {
-            low_part = tax_rate/100 * income_array[i];
-            high_part = higher_tax/100 * income_array[i];
+            // FIXED: Keeping track of parts over, and under limit.
+            // Calculating tax according to the parts
+            over_limit = income_sum - income_limit;
+            under_limit = income_array[i] - over_limit;
+            low_part = tax_rate/100 * under_limit;
+            high_part = higher_tax/100 * over_limit;
             tax_array[i] = low_part + high_part;
         }
 
