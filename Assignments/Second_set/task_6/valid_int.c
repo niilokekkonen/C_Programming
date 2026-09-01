@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
-#define CHAR_CODE 777 // Character error code
 
-int valid_int(void);
+#include "task_6.h"
+
 
 // Validating user input for being a integer
 int valid_int(void) 
@@ -14,7 +14,7 @@ int valid_int(void)
         while (getchar() != '\n');
         
         valid_int = false;
-        return CHAR_CODE; // Returns CHAR_CODE if encounters characters
+        return false; // Returns false (0) if invalid input
     } 
     else
     {

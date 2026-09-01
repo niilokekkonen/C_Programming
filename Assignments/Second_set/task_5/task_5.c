@@ -3,10 +3,7 @@
 #include <windows.h>
 
 #include "task_5.h"
-// 'ERROR' code for a user entering characters
-#define CHAR_CODE 777
-// 'ERROR' code for user going out of range(OUR)
-#define OUR_CODE 888
+// EDIT: Removed constant 'error' code variables to ensure programs general usefulness
 #define ROUNDS 3 // Const round variable
 
 
@@ -27,15 +24,10 @@ int main (void)
             printf("I got %d It's a tie\n", max);
 
         }
-        else if (entered == CHAR_CODE) 
+        else if (entered == false) 
         {
-            printf("Try again! try to enter NUMBERS\n");
+            printf("Try again! Faulty input.\nYou must enter whole numbers\n");
             k--; // Not spending a round for input error
-        }
-        else if (entered == OUR_CODE) 
-        {
-            printf("Try again! input OUT OF RANGE\n");
-            k--;
         }
         else 
         {
@@ -50,14 +42,10 @@ int read_range(int low, int high)
 {
     printf("Enter a number between (%d - %d)\n", low, high);
     int number = valid_int();
-    if (number == CHAR_CODE) 
-    {
-        return CHAR_CODE;
-    }
-    else if (number < low || number > high) 
+    if (number < low || number > high) 
     {
         //printf("Number out of range\n");
-        return OUR_CODE;
+        return false;
     }
     else if (number >= low || number <= high)
     {
@@ -65,7 +53,7 @@ int read_range(int low, int high)
         return number;
     }
 }
-// Validates integer, inputs CHAR_CODE=777 if a character is encountered
+// Validates integer, outputs false if not valid int
 int valid_int(void) 
 {
     int number = 0;
@@ -75,7 +63,7 @@ int valid_int(void)
         while (getchar() != '\n');
         
         valid_int = false;
-        return CHAR_CODE; // Returns CHAR_CODE if encounters characters
+        return false; // Returns false if invalid input
     } 
     else
     {

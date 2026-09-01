@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "task_6.h"
+#include "valid_int.c"
 
 int main(void) 
 {
@@ -12,7 +13,7 @@ int main(void)
     {
         print_menu();
         validated = valid_int();
-        if (validated == 777)
+        if (validated == false)
         {
         printf("You must enter numbers\n");
         } // Roll d6
