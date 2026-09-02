@@ -47,7 +47,7 @@ int read_range(int low, int high)
         //printf("Number out of range\n");
         return false;
     }
-    else if (number >= low || number <= high)
+    else if (number >= low && number <= high)
     {
         //printf("Number is in range\n");
         return number;

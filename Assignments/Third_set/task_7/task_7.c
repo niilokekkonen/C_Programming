@@ -4,7 +4,7 @@
 
 
 // # INCLUDE PATH TO valid_int.c
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\Second_set\task_6\valid_int.c"
+#include "Second_set\task_6\valid_int.c"
 
 int main(void) 
 {
