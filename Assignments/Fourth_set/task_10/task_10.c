@@ -19,13 +19,15 @@ int main(void)
     {
     read_string(prompt, str, STR_BUF);
     count_letters(str, plen);
-    printf("Strlen: %d\n", strlen(str));
-    printf("My func len: %d\n", str_len);
     string_check = check_str(str, end_str);
-    printf("STRINGS MATCH: %d\n", string_check);
-    printf("%s\n", str);
+    if (string_check) 
+    {
+        printf("Bye bye\n");
+        return 0; // shutdown if user enters 'stop'
     }
-    return 0;
+    printf("String len: %d\n", str_len);
+    printf("String = %s\n", str);
+    }
 }
 
 // Reads a string with fgets to *str variable
@@ -35,25 +37,34 @@ void read_string(const char *prompt, char *str, int str_len)
     fgets(str, str_len, stdin);
     // Removing linefeed from string
     bool removed = remove_lf(str);
+    if (removed == false) 
+    {
+        printf("String is over the character limit (%d)\n", STR_BUF);
+        clear(); // Clearing input buffer in case of str len being too much
+    }
 }
 
 // Returns true if succesfully removes newline char
-// Returns false if pointer is NULL
+// Returns false if pointer is NULL, 
+// Also returns false if fgets can't read the whole str
 bool remove_lf(char *str) 
 {
-    if (str != NULL) 
+    if (str != NULL && strlen(str) != 0) 
     {   // Replacing newline with linefeed
         if (str[strlen(str) - 1] == '\n') 
         {
             str[strlen(str) - 1 ] = '\0';
+            return true;
         }
-        return true;
+        else 
+        {
+            return false;
+        }
     }
     else 
     {
         return false;
     }
-
 }
 
 
@@ -109,4 +120,10 @@ bool check_str(char *str, char *comparison)
     {
         return false;
     }
+}
+
+// Clears input buffer
+void clear(void) 
+{
+    while (getchar() != '\n');
 }

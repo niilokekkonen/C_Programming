@@ -18,7 +18,7 @@ int main(void)
     if (returned < 0) 
     {
         average = calc_avg(sum, count);
-        printf("%.3f", average);
+        printf("%.3f\n", average);
         entering = false;
     }
     else 
@@ -34,9 +34,14 @@ int main(void)
   return 0;   
 }
 
+// Returns float average if count is not 0
 float calc_avg(int sum, int count) 
 {
-    float avg = (float) sum / count;
+    float avg = 0.0;   
+    if (count != 0) 
+    {
+        avg = (float) sum / count;
+    } 
     return avg;
 }
 
@@ -54,7 +59,8 @@ int read_int(void)
     } 
     else
     {
-        return number;
+        valid_int = true;
     }
     }
+    return number;
 }
