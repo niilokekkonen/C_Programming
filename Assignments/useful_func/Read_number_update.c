@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Reads a number from stdinput
 int read_number(const char *prompt)
 {
     int number = 0;

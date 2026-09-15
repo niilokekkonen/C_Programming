@@ -67,6 +67,7 @@ int count_words(const char* str, const char *word)
 
 
 // Reads a string with fgets to *str variable
+// Prompt is the question for user, *str is the variable where the read string is placed, max_str_len
 void read_string(const char *prompt, char *str, int str_len) 
 {
     printf("%s", prompt);
@@ -125,8 +126,9 @@ bool check_str(char *str, char *comparison)
     }
 }
 
-// Clears input buffer
+// clears the input buffer
 void clear_ib(void) 
 {
-    while(getchar() != '\n');
+    while (getchar() != '\n');
 }
+
