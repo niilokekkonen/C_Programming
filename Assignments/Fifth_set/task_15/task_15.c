@@ -67,10 +67,17 @@ bool read_data(const char *filename, int *linecount, menu_item struct_arr[ARR_LE
         {
             if (fgets(line_buffer, LINE_LEN, inf) != NULL) 
             {
-                split_string(mark, line_buffer, number, LINE_LEN);
-                strcpy(struct_arr[ec].name,line_buffer);
-                struct_arr[ec].price = atof(number);
-                ec++;
+                bool split = split_string(mark, line_buffer, number, LINE_LEN);
+                if (split) 
+                {
+                    strcpy(struct_arr[ec].name,line_buffer);
+                    struct_arr[ec].price = atof(number);
+                    ec++;       
+                }
+                else 
+                {
+                    // Don't do anything, altering data only if the string can be split
+                }
             }
 
         }
@@ -82,18 +89,20 @@ bool read_data(const char *filename, int *linecount, menu_item struct_arr[ARR_LE
 
 }
 
-void split_string(char mark, char *str, char *number, int number_size) 
+bool split_string(char mark, char *str, char *number, int number_size) 
 {
     // Finding the first occurence of mark
     char *ch = strchr(str, mark);
     if (ch == NULL) 
     {
         fprintf(stderr,"Failed to find %c\n", mark);
+        return false;
     }
     else 
     {
         *ch = '\0';
         strcpy(number, (ch + 1));
+        return true;
     }   
     
 }

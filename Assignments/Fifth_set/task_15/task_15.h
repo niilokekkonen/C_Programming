@@ -7,5 +7,5 @@ typedef struct menu_item_ {
 } menu_item;
 
 bool read_data(const char *filename, int *linecount, menu_item struct_arr[ARR_LEN]); 
-void split_string(char mark, char *str, char *number, int number_size); 
+bool split_string(char mark, char *str, char *number, int number_size); 
 void print_struct(menu_item struct_arr[ARR_LEN], int *ec); 
