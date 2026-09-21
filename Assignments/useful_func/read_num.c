@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 // Reads a number from stdinput
+// Returns the number if read
 int read_number(const char *prompt)
 {
     int number = 0;
@@ -13,6 +14,7 @@ int read_number(const char *prompt)
         return number;    
     } else 
     {
-        return 0;
+        printf("Reading failed\n");
+        return number;
     }
 }
