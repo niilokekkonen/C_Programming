@@ -77,11 +77,13 @@ bool read_text(const char *filename, int *linecount,char (*str_arr)[LINE_LEN])
         printf("Read %d lines, from %s\n", lc, filename);
         *linecount = lc;
         fclose(inf);
+        /* 
         for (int i = 0; i < lc; i++) 
         {
             printf("STR %d: %s", i+1, str_arr[i]);
         }
-        printf("\n");
+        printf("\n");    
+        */
         return true;
     }
 }

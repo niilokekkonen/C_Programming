@@ -1,1 +1,1 @@
-void read_file(const char *filename);
+void read_nums(const char *filename);
