@@ -4,10 +4,11 @@
 #include <stdbool.h>
 #include "task_14.h"
 
+
 // Useful funcs brought from Assignments\useful_func
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\Read_num.c"
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_string.c"
+#include "useful_func\Read_num.c"
 
 #define LINE_LEN 80
 #define LINE_CNT 100
@@ -70,20 +71,20 @@ bool read_text(const char *filename, int *linecount,char (*str_arr)[LINE_LEN])
         {
             if (fgets(str_arr[lc], LINE_LEN, inf) != NULL) 
             {
-                lc++;
+                if (str_arr[lc][0] != '\n') 
+                {
+                    lc++;    
+                }
+                else 
+                {
+                    // don't do nothing, so fgets overwrites the \n char
+                }
             }
 
         }
         printf("Read %d lines, from %s\n", lc, filename);
         *linecount = lc;
         fclose(inf);
-        /* 
-        for (int i = 0; i < lc; i++) 
-        {
-            printf("STR %d: %s", i+1, str_arr[i]);
-        }
-        printf("\n");    
-        */
         return true;
     }
 }

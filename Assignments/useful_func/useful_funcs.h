@@ -6,3 +6,4 @@ int read_number(const char *prompt);
 bool remove_lf(char *str);
 bool parse_number(char *input, int *pnum); 
 bool read_range(int low, int high, int *pnum);
+int generate_num(int range);

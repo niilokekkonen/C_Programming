@@ -1,27 +1,30 @@
 #include <stdbool.h>
 #include <string.h>
-#include "task_15.h"
+#include "task_19.h"
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdio.h>
 
 // Useful funcs brought from Assignments\useful_func
-#include "useful_func\useful_funcs.h"
-#include "useful_func\read_string.c"
-#include "useful_func\Read_num.c"
+#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
+#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
+#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\Read_num.c"
 
-
-#define ARR_LEN 40
+#define CHOICE_LEN 7
 #define FILE_LEN 20
+#define ARR_LEN 40
 #define LINE_LEN 100
+
+// Task 15 extension written in VIM through Git bash
 
 int main(void) 
 {
     // Initial variables
     char *prompt = "Enter the filename you want to read\n";
     char infile_name[FILE_LEN] = {'\n'};
+    char sort_choice[CHOICE_LEN] = {'\n'};
     int lc = 0; // Read lines from file
-    int *lp = &lc;
+    int *lcp = &lc; 
     menu_item struct_arr[ARR_LEN];
     // Reading string from user
     read_string(prompt, infile_name, FILE_LEN);
@@ -32,14 +35,31 @@ int main(void)
     }
     else 
     {
-        bool read = read_data(infile_name, lp, struct_arr);
+        bool read = read_data(infile_name, lcp, struct_arr);
         if (read) 
         {
-            print_struct(struct_arr, lp);
-            return 0;
+	    char *choice = "Do you want to sort by name or price?nType 'price'/'name'\n";
+            read_string(choice, sort_choice, CHOICE_LEN);
+            if ((strcmp(sort_choice, "price") == 0)) 
+            { 
+                sort_prices(struct_arr, lc);
+                print_struct(struct_arr, lcp);
+                return 0;
+            }
+            else if ((strcmp(sort_choice, "name") == 0)) 
+            {
+                sort_names(struct_arr, lc);
+                print_struct(struct_arr, lcp);
+                return 0;
+            }
+            else 
+            {
+                printf("Invalid input\n");
+            }
         }
         else 
         {
+	        printf("Failed to read data\n");	
             return 1;
         }
     }
@@ -115,4 +135,55 @@ void print_struct(menu_item struct_arr[ARR_LEN], int *ec)
     {
         printf("%8.3lf\t%8s\n", struct_arr[i].price, struct_arr[i].name);
     }   
+}
+
+// Sorts an array of structures in alphabetical order based on their names
+void sort_names(menu_item *struct_arr, int arr_len)
+{
+   qsort(struct_arr, arr_len, sizeof(menu_item), int_cmp);
+
+}
+
+// Sorts an array of structures based on prices of items
+void sort_prices(menu_item *struct_arr, int arr_len)
+{
+	qsort(struct_arr, arr_len, sizeof(menu_item), structstr_cmp);
+
+
+}
+
+
+// Compares a to b
+// if a < b returns -1
+// if a > b returns 1
+// if a == b returns 0
+int int_cmp(const void *a, const void *b)
+{
+	menu_item ca = *(menu_item *)a;
+	menu_item cb = *(menu_item *)b;
+	double price_a = ca.price;
+	double price_b= cb.price;
+	if (price_a < price_b)
+	    return -1;
+	else if (price_a > price_b)
+	    return 1;
+	else
+	    return 0;
+}
+
+// Reversed comparison of void ptrs
+// returns 0 if values are equal
+// returns 1 if a < b
+// returns -1 if a > b
+int structstr_cmp(const void *a, const void *b)
+{
+    menu_item ca = *(menu_item *)a;
+    menu_item cb = *(menu_item *)b;
+    int comparison = strcmp(ca.name, cb.name);	
+    if (comparison < 0)
+        return 1;
+    else if (comparison > 0)
+       return -1;
+    else
+       return 0;
 }

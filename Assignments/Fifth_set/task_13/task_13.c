@@ -3,10 +3,11 @@
 #include "task_13.h"
 #include <string.h>
 
+
 // Useful funcs brought from Assignments\useful_func
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\Read_num.c"
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_string.c"
+#include "useful_func\Read_num.c"
 
 
 #define FILE_LEN 100
