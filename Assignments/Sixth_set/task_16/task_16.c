@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "task_16.h"
-#include "useful_func\useful_funcs.h"
+#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
 
-#include "useful_func\read_num.c"
-#include "useful_func\read_string.c"
+#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_num.c"
+#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
 
 #define STR_LEN 20
 
@@ -38,7 +38,6 @@ int main(void)
             }
             else 
             {
-                printf("Num: %d\nEnd: %d\n",num, end);
                 Node *new_node = malloc(sizeof(Node));
                 new_node->number = num;
                 add_end(phead, new_node);

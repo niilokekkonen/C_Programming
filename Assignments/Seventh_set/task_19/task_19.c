@@ -38,7 +38,7 @@ int main(void)
         bool read = read_data(infile_name, lcp, struct_arr);
         if (read) 
         {
-	    char *choice = "Do you want to sort by name or price?nType 'price'/'name'\n";
+	    char *choice = "Do you want to sort by name or price?\nType 'price'/'name'\n";
             read_string(choice, sort_choice, CHOICE_LEN);
             if ((strcmp(sort_choice, "price") == 0)) 
             { 

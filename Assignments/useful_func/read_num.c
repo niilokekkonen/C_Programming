@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <limits.h>
 
 // Reads a number from stdinput
 // Returns the number if read else returns 0 
@@ -17,14 +18,10 @@ int read_number(const char *prompt)
       //printf("Parsed(%d) input %d\n", parsed, number);
       return number;  
     }
-    else if (!parsed)
-    {
-        //printf("Parsed(%d) input %d\n", parsed, number);
-        return -1;
-    }
     else 
     {
-        return -2;
+        //printf("Parsed(%d) input %d\n", parsed, number);
+        return INT_MIN;
     }
 }   
 
@@ -49,6 +46,10 @@ bool read_range(int low, int high, int *pnum)
 {
     printf("Enter a number between (%d - %d)", low, high);
     int number = read_number("\n");
+    if (number == INT_MIN) 
+    {
+        return false; // Failed to parse number(Characters were entered)
+    }
     if (number < low || number > high) 
     {
         *pnum = number; // 'returns' read value anyway

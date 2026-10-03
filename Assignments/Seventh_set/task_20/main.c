@@ -32,7 +32,8 @@ int main(void)
     }
     else 
     {
-	    printf("Number %d not in range\n", debug_lvl);    
+	    printf("Number %d not in range\n", debug_lvl);
+        printf("If parsing fails, you tried entering characters\n");    
 	    // Number not in range
 	    return 1;     
     }

@@ -4,9 +4,9 @@
 #include <stdlib.h>
 
 
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_num.c"
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_num.c"
+#include "useful_func\read_string.c"
 
 #define UPPER_LIM 15
 #define LOW_LIM 0
@@ -22,13 +22,15 @@ int main(void)
     bool in_range = true;
     while (!(number < 0)) 
     {
+        printf("Enter a negative number to quit or\n");
         in_range = read_range(LOW_LIM, UPPER_LIM, pnum); // true if number in range, else false
         if (!in_range) 
         {
             printf("Number not in range\n");
+            printf("Parsing failed means that you tried entering characters\n");
             if(number < 0) 
             {
-                printf("You entered a negative number\nif parsing failed, you entered characters\n");
+                printf("You entered a negative number, Bye Bye\n");
             }
         }
         else if (in_range)

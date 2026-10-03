@@ -9,9 +9,8 @@
 #define MAX_ARR_LEN 32
 #define PW_LEN 64
 
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
-
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_string.c"
 
 int main(void) 
 {
@@ -27,6 +26,7 @@ int main(void)
         if (stop) 
         {
             generating = false;
+            printf("Entered stop, bye bye!\n");
             return 0;
         }
         if (input[0] != '\0') 
