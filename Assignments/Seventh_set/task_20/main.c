@@ -3,8 +3,9 @@
 #include "debug.h"
 #include <stdlib.h>
 #include <time.h>
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_num.c"
+
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_num.c"
 
 #define RANGE_MAX 4
 #define RANGE_MIN 0
