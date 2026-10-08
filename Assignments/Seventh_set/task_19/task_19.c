@@ -6,9 +6,10 @@
 #include <stdio.h>
 
 // Useful funcs brought from Assignments\useful_func
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\Read_num.c"
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_num.c"
+#include "useful_func\read_string.c"
+
 
 #define CHOICE_LEN 7
 #define FILE_LEN 20

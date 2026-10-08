@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "task_16.h"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\useful_funcs.h"
 
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_num.c"
-#include "C:\Users\niilo\Desktop\C-course\Programs\Assignments\useful_func\read_string.c"
+#include "useful_func\useful_funcs.h"
+#include "useful_func\read_num.c"
+#include "useful_func\read_string.c"
 
 #define STR_LEN 20
 
